@@ -1,9 +1,9 @@
 # Informe de Auditoría — B-Tree
 
 **Asignatura:** Estructuras de Datos Avanzadas (IC10D – EDA)  
-**Estudiante:** [Nombre]  
-**RUT:** [RUT]  
-**Fecha:** [AAAA-MM-DD]  
+**Estudiante:** [Daniza Michelle Peso Paredes]  
+**RUT:** [20.921.970-0]  
+**Fecha:** [2026-11-17]  
 **Taller:** 4 — Auditoría de un B-Tree
 
 ---
@@ -57,9 +57,9 @@ pero la decisión es discutible, clasifícala como diseño.
 
 | ID | Ubicación | Decisión observada | Por qué es discutible | Impacto | Propuesta | Prioridad |
 | :--- | :--- | :--- | :--- | :--- | :--- | :---: |
-| H-01 | `src/...:línea` | | | | | Alta/Media/Baja |
-| H-02 | `src/...:línea` | | | | | |
-| H-03 | `src/...:línea` | | | | | |
+| H-01 | `src/tree.py:línea` |Fijar el tamaño del nodo en base a las keys |Porque si esas claves + punteros no caben en el bloque, el invariante se rompe  |el costo se duplica |verificar cuantos bytes ocupa el bloque | Media |
+| H-02 | `src/tree.py:48-54` |Permitir claves duplicadas | Almacenar dos veces la misma key es ineficiente|Baja de rendimiento |No insertar la misma clave, buscar antes de insertar |Media |
+| H-03 | `src/tree.py:línea` |Delete poco eficiente |Hace rebuilds por cada delete | Baja de rendimiento|Comparar en vez de rehacer | |
 
 > Si encuentras más de tres, duplica una fila. No se penaliza no llegar a
 > las decisiones más finas; se evalúa la calidad de las que sí sostienes.
