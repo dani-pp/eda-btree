@@ -57,9 +57,9 @@ pero la decisión es discutible, clasifícala como diseño.
 
 | ID | Ubicación | Decisión observada | Por qué es discutible | Impacto | Propuesta | Prioridad |
 | :--- | :--- | :--- | :--- | :--- | :--- | :---: |
-| H-01 | `src/tree.py:línea` |Fijar el tamaño del nodo en base a las keys |Porque si esas claves + punteros no caben en el bloque, el invariante se rompe  |el costo se duplica |verificar cuantos bytes ocupa el bloque | Media |
+| H-01 | `src/tree.py:17-28` |Fijar el tamaño del nodo en base a las keys |Porque si esas claves + punteros no caben en el bloque, el invariante se rompe  |el costo se duplica |verificar cuantos bytes ocupa el bloque | Media |
 | H-02 | `src/tree.py:48-54` |Permitir claves duplicadas | Almacenar dos veces la misma key es ineficiente|Baja de rendimiento |No insertar la misma clave, buscar antes de insertar |Media |
-| H-03 | `src/tree.py:línea` |Delete poco eficiente |Hace rebuilds por cada delete | Baja de rendimiento|Comparar en vez de rehacer | |
+| H-03 | `src/tree.py:97-107` |Delete poco eficiente |Hace rebuilds por cada delete | Baja de rendimiento|Comparar en vez de rehacer |Media |
 
 > Si encuentras más de tres, duplica una fila. No se penaliza no llegar a
 > las decisiones más finas; se evalúa la calidad de las que sí sostienes.
@@ -75,6 +75,8 @@ Para cada hallazgo, indica si es:
 - **Error de correctitud:** el código no cumple su contrato. En ese caso,
   adjunta una traza o un test que lo demuestre.
 
+
+1,2 y 3 Deuda de implementación
 ---
 
 ## 4. Evidencia de ejecución
